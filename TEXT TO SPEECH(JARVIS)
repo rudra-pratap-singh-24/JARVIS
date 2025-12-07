@@ -3,20 +3,16 @@ import pyttsx3
 import webbrowser
 import os
 import time
-
 # 1. Initialize the Engine and Microphone
 speaker = pyttsx3.init()
 mic = sr.Recognizer()
-
 # # Setting a faster voice rate (optional)
 # speaker.setProperty('rate', 170) 
-
 def speak(text):
     """Helper function to make speaking easier"""
     print(f"Jarvis: {text}")
     speaker.say(text)
     speaker.runAndWait()
-
 def take_command():
     """Listens to the microphone and returns text"""
     try:
@@ -28,13 +24,10 @@ def take_command():
             return command.lower() # Convert to lowercase for easy matching
     except:
         return "none"
-
 # 2. Main Execution Loop
 if __name__ == "__main__":
-    
     speak("Hello Rudra Pratap Singh Sir. I am online. What can I do for you?")
-
-    while True:
+while True:
         text = take_command()
         
         if text == "none":
